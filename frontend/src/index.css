@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+body { @apply bg-night font-sans text-snow antialiased; }
+h1, h2, h3 { @apply font-display; }
+:focus-visible { outline: 2px solid #FFC83D; outline-offset: 2px; }
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply bg-sun text-night hover:brightness-95; }
+  .btn-ghost { @apply bg-grape text-snow hover:bg-line; }
+  .btn-danger { @apply bg-danger text-night hover:brightness-95; }
+  .input { @apply w-full rounded-2xl border border-line bg-plum px-4 py-3 text-sm text-snow placeholder:text-muted/70 focus:border-sun focus:outline-none; }
+  .card { @apply rounded-3xl border border-line bg-plum p-6; }
+}
+
+/* LiveKit room theming (higher specificity than the library defaults) */
+.vc-room[data-lk-theme] {
+  --lk-bg: #15112B; --lk-fg: #F4F1FF; --lk-accent-bg: #FFC83D; --lk-accent-fg: #15112B;
+  --lk-border-radius: 22px; --lk-grid-gap: 10px;
+}
+.vc-room .lk-participant-tile { border-radius: 22px; background: #241F4A; }
+.vc-room .lk-participant-tile[data-lk-speaking='true'] { box-shadow: 0 0 0 3px #FFC83D, 0 0 32px rgba(255, 200, 61, .35); }
+.vc-room .lk-participant-metadata-item { background: rgba(21, 17, 43, .75); border-radius: 999px; padding: 4px 10px; }
+.vc-room .lk-participant-placeholder { background: #241F4A; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
