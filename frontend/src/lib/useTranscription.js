@@ -4,7 +4,8 @@ import { api } from './api.js';
 const SR = typeof window !== 'undefined' ? window.SpeechRecognition || window.webkitSpeechRecognition : null;
 export const speechSupported = !!SR;
 
-const log = (...a) => console.log('[transcribe]', ...a); // remove once transcription worksconst sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const log = (...a) => console.log('[transcribe]', ...a); // remove once transcription works
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const FATAL_HTTP = [401, 403, 404, 410]; // retrying cannot fix these
 const MAX_TRIES = 6;
 const MAX_QUEUE = 300;
