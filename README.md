@@ -1,4 +1,4 @@
-# Huddle: video meetings (React + Express + MongoDB + LiveKit)
+# Pulse: video meetings (React + Express + MongoDB + LiveKit)
 
 Zoom-style meetings: accounts, lobby with camera/mic preview, rooms with screen share, chat, participant list, host controls and meeting history. All audio/video goes through **LiveKit Cloud** (no hand-rolled WebRTC). Join tokens are minted by the backend only after it authorizes the user.
 

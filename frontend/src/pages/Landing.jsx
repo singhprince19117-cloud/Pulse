@@ -18,7 +18,7 @@ export default function Landing() {
       <header className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5">
         <Logo />
         <div className="flex items-center gap-2">
-          {user ? <Link className="btn btn-primary" to="/dashboard">Open huddle</Link> : (
+          {user ? <Link className="btn btn-primary" to="/dashboard">Open Pulse</Link> : (
             <>
               <Link className="px-3 text-sm font-bold text-muted hover:text-snow" to="/login">Log in</Link>
               <Link className="btn btn-primary" to="/signup">Sign up</Link>
